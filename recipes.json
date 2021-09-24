@@ -1,0 +1,465 @@
+[
+    {
+        "recipename": "Adaptive Control Unit",
+        "alternate": false,
+        "prerequisites": "Tier 5 - Industrial Manufacturing",
+        "inputs": [
+            {
+                "product": "Automated Wiring",
+                "amount": 15,
+                "recipe_min": 7.5
+            },
+            {
+                "product": "Circuit Board",
+                "amount": 10,
+                "recipe_min": 5.0
+            }
+        ],
+        "outputs": [
+            {
+                "product": "Adaptive Control Unit",
+                "amount": 2,
+                "recipe_min": 1.0,
+                "mj": 3300.0
+            }
+        ],
+        "machine": "Manufacturer",
+        "machine_seconds": 120
+    },
+    {
+        "recipename": "Adaptive Control Unit",
+        "alternate": false,
+        "prerequisites": "Tier 5 - Industrial Manufacturing",
+        "inputs": [
+            {
+                "product": "Heavy Modular Frame",
+                "amount": 2,
+                "recipe_min": 1.0
+            },
+            {
+                "product": "Computer",
+                "amount": 2,
+                "recipe_min": 1.0
+            }
+        ],
+        "outputs": [
+            {
+                "product": "Adaptive Control Unit",
+                "amount": 2,
+                "recipe_min": 1.0,
+                "mj": 3300.0
+            }
+        ],
+        "machine": "Manufacturer",
+        "machine_seconds": 120
+    },
+    {
+        "recipename": "AI Limiter",
+        "alternate": false,
+        "prerequisites": "Caterium Research - AI Limiter",
+        "inputs": [
+            {
+                "product": "Copper Sheet",
+                "amount": 5,
+                "recipe_min": 25.0
+            },
+            {
+                "product": "Quickwire",
+                "amount": 20,
+                "recipe_min": 100.0
+            }
+        ],
+        "outputs": [
+            {
+                "product": "AI Limiter",
+                "amount": 1,
+                "recipe_min": 5.0,
+                "mj": 180.0
+            }
+        ],
+        "machine": "Assembler",
+        "machine_seconds": 126
+    },
+    {
+        "recipename": "Alclad Aluminum Sheet",
+        "alternate": false,
+        "prerequisites": "Tier 7 - Bauxite Refinement",
+        "inputs": [
+            {
+                "product": "Aluminum Ingot",
+                "amount": 3,
+                "recipe_min": 30.0
+            },
+            {
+                "product": "Copper Ingot",
+                "amount": 1,
+                "recipe_min": 10.0
+            }
+        ],
+        "outputs": [
+            {
+                "product": "Alclad Aluminum Sheet",
+                "amount": 3,
+                "recipe_min": 30.0,
+                "mj": 30.0
+            }
+        ],
+        "machine": "Assembler",
+        "machine_seconds": 6
+    },
+    {
+        "recipename": "Biomass (Alien Carapace)",
+        "alternate": false,
+        "prerequisites": "Alien Organisms - Structural Analysis",
+        "inputs": [
+            {
+                "product": "Alien Carapace",
+                "amount": 1,
+                "recipe_min": 15.0
+            }
+        ],
+        "outputs": [
+            {
+                "product": "Biomass",
+                "amount": 100,
+                "recipe_min": 1500.0,
+                "mj": 0.16
+            }
+        ],
+        "machine": "Constructor",
+        "machine_seconds": 42
+    },
+    {
+        "recipename": "Aluminum Casing",
+        "alternate": false,
+        "prerequisites": "Tier 7 - Bauxite Refinement",
+        "inputs": [
+            {
+                "product": "Aluminum Ingot",
+                "amount": 3,
+                "recipe_min": 90.0
+            }
+        ],
+        "outputs": [
+            {
+                "product": "Aluminum Casing",
+                "amount": 2,
+                "recipe_min": 60.0,
+                "mj": 4.0
+            }
+        ],
+        "machine": "Constructor",
+        "machine_seconds": 2
+    },
+    {
+        "recipename": ": Alclad Casing",
+        "alternate": true,
+        "prerequisites": "Tier 7 - Bauxite Refinement",
+        "inputs": [
+            {
+                "product": "Aluminum Ingot",
+                "amount": 20,
+                "recipe_min": 150.0
+            },
+            {
+                "product": "Copper Ingot",
+                "amount": 10,
+                "recipe_min": 75.0
+            }
+        ],
+        "outputs": [
+            {
+                "product": "Aluminum Casing",
+                "amount": 15,
+                "recipe_min": 112.5,
+                "mj": 8.0
+            }
+        ],
+        "machine": "Assembler",
+        "machine_seconds": 8
+    },
+    {
+        "recipename": "Aluminum Ingot",
+        "alternate": false,
+        "prerequisites": "Tier 7 - Bauxite Refinement",
+        "inputs": [
+            {
+                "product": "Aluminum Scrap",
+                "amount": 6,
+                "recipe_min": 90.0
+            },
+            {
+                "product": "Silica",
+                "amount": 5,
+                "recipe_min": 75.0
+            }
+        ],
+        "outputs": [
+            {
+                "product": "Aluminum Ingot",
+                "amount": 4,
+                "recipe_min": 60.0,
+                "mj": 16.0
+            }
+        ],
+        "machine": "Foundry",
+        "machine_seconds": 4
+    },
+    {
+        "recipename": "Pure Aluminum Ingot",
+        "alternate": true,
+        "prerequisites": "Tier 7 - Bauxite Refinement",
+        "inputs": [
+            {
+                "product": "Aluminum Scrap",
+                "amount": 2,
+                "recipe_min": 60.0
+            }
+        ],
+        "outputs": [
+            {
+                "product": "Aluminum Ingot",
+                "amount": 1,
+                "recipe_min": 30.0,
+                "mj": 8.0
+            }
+        ],
+        "machine": "Smelter",
+        "machine_seconds": 2
+    },
+    {
+        "recipename": "Aluminum Scrap",
+        "alternate": false,
+        "prerequisites": "Tier 7 - Bauxite Refinement",
+        "inputs": [
+            {
+                "product": "Alumina Solution",
+                "amount": 4,
+                "recipe_min": 240.0
+            },
+            {
+                "product": "Coal",
+                "amount": 2,
+                "recipe_min": 120.0
+            }
+        ],
+        "outputs": [
+            {
+                "product": "Aluminum Scrap",
+                "amount": 6,
+                "recipe_min": 360.0,
+                "mj": 5.0
+            },
+            {
+                "product": "Water",
+                "amount": 2,
+                "recipe_min": 120.0,
+                "mj": 15.0
+            }
+        ],
+        "machine": "Refinery",
+        "machine_seconds": 1
+    },
+    {
+        "recipename": "Electrode - Aluminum Scrap",
+        "alternate": true,
+        "prerequisites": "Tier 7 - Bauxite Refinement",
+        "inputs": [
+            {
+                "product": "Alumina Solution",
+                "amount": 12,
+                "recipe_min": 180.0
+            },
+            {
+                "product": "Petroleum Coke",
+                "amount": 4,
+                "recipe_min": 60.0
+            }
+        ],
+        "outputs": [
+            {
+                "product": "Aluminum Scrap",
+                "amount": 20,
+                "recipe_min": 300.0,
+                "mj": 6.0
+            },
+            {
+                "product": "Water",
+                "amount": 7,
+                "recipe_min": 105.0,
+                "mj": 17.14
+            }
+        ],
+        "machine": "Refinery",
+        "machine_seconds": 4
+    },
+    {
+        "recipename": "Instant Scrap",
+        "alternate": true,
+        "prerequisites": "Tier 7 - Bauxite RefinementTier 7 - Aeronautical Engineering",
+        "inputs": [
+            {
+                "product": "Bauxite",
+                "amount": 15,
+                "recipe_min": 150.0
+            },
+            {
+                "product": "Coal",
+                "amount": 10,
+                "recipe_min": 100.0
+            }
+        ],
+        "outputs": [
+            {
+                "product": "Aluminum Scrap",
+                "amount": 30,
+                "recipe_min": 300.0,
+                "mj": 15.0
+            },
+            {
+                "product": "Water",
+                "amount": 5,
+                "recipe_min": 50.0,
+                "mj": 90.0
+            }
+        ],
+        "machine": "Blender",
+        "machine_seconds": 6
+    },
+    {
+        "recipename": "Instant Scrap",
+        "alternate": true,
+        "prerequisites": "Tier 7 - Bauxite RefinementTier 7 - Aeronautical Engineering",
+        "inputs": [
+            {
+                "product": "Sulfuric Acid",
+                "amount": 5,
+                "recipe_min": 50.0
+            },
+            {
+                "product": "Water",
+                "amount": 6,
+                "recipe_min": 60.0
+            }
+        ],
+        "outputs": [
+            {
+                "product": "Aluminum Scrap",
+                "amount": 30,
+                "recipe_min": 300.0,
+                "mj": 15.0
+            },
+            {
+                "product": "Water",
+                "amount": 5,
+                "recipe_min": 50.0,
+                "mj": 90.0
+            }
+        ],
+        "machine": "Blender",
+        "machine_seconds": 6
+    },
+    {
+        "recipename": "Assembly Director System",
+        "alternate": false,
+        "prerequisites": "Tier 7 - Aeronautical Engineering",
+        "inputs": [
+            {
+                "product": "Adaptive Control Unit",
+                "amount": 2,
+                "recipe_min": 1.5
+            },
+            {
+                "product": "Supercomputer",
+                "amount": 1,
+                "recipe_min": 0.75
+            }
+        ],
+        "outputs": [
+            {
+                "product": "Assembly Director System",
+                "amount": 1,
+                "recipe_min": 0.75,
+                "mj": 1200.0
+            }
+        ],
+        "machine": "Assembler",
+        "machine_seconds": 80
+    },
+    {
+        "recipename": "Automated Wiring",
+        "alternate": false,
+        "prerequisites": "Tier 4 - Advanced Steel Production",
+        "inputs": [
+            {
+                "product": "Stator",
+                "amount": 1,
+                "recipe_min": 2.5
+            },
+            {
+                "product": "Cable",
+                "amount": 20,
+                "recipe_min": 50.0
+            }
+        ],
+        "outputs": [
+            {
+                "product": "Automated Wiring",
+                "amount": 1,
+                "recipe_min": 2.5,
+                "mj": 360.0
+            }
+        ],
+        "machine": "Assembler",
+        "machine_seconds": 24
+    },
+    {
+        "recipename": "High-Speed Wiring",
+        "alternate": true,
+        "prerequisites": "Tier 4 - Advanced Steel ProductionCaterium Research - A.I. LimiterTier 5 - Industrial Manufacturing",
+        "inputs": [
+            {
+                "product": "Stator",
+                "amount": 2,
+                "recipe_min": 3.75
+            },
+            {
+                "product": "Wire",
+                "amount": 40,
+                "recipe_min": 75.0
+            }
+        ],
+        "outputs": [
+            {
+                "product": "Automated Wiring",
+                "amount": 4,
+                "recipe_min": 7.5,
+                "mj": 440.0
+            }
+        ],
+        "machine": "Manufacturer",
+        "machine_seconds": 32
+    },
+    {
+        "recipename": "High-Speed Wiring",
+        "alternate": true,
+        "prerequisites": "Tier 4 - Advanced Steel ProductionCaterium Research - A.I. LimiterTier 5 - Industrial Manufacturing",
+        "inputs": [
+            {
+                "product": "High-Speed Connector",
+                "amount": 1,
+                "recipe_min": 1.875
+            }
+        ],
+        "outputs": [
+            {
+                "product": "Automated Wiring",
+                "amount": 4,
+                "recipe_min": 7.5,
+                "mj": 440.0
+            }
+        ],
+        "machine": "Manufacturer",
+        "machine_seconds": 32
+    }
+]
