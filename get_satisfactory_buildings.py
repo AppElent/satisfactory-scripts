@@ -14,8 +14,6 @@ buildings = []
 for link in building_pages_links:
     i = i + 1
     print(link.get_text() + ' - ' + link.get('href'))
-    if i > 10:
-        break
     if '/' in link.get_text().lower().replace('/wiki/', ''):
         print('Skippen')
         continue

@@ -11,14 +11,10 @@ pagesoup = BeautifulSoup(page.content, "html.parser")
 
 pagediv = pagesoup.find(id="mw-pages")
 links = pagediv.find_all('a')
-i = 0
 item_list = []
 recipe_list = []
 for link in links:
-    i = i + 1
     print(link.get_text() + ' - ' + link.get('href'))
-    if i > 9:
-         break
     if '/' in link.get_text().lower().replace('/wiki/', '') or '\%EC\%B' in link.get_text().lower():
         print('Skippen')
         continue
@@ -32,7 +28,6 @@ for link in links:
     def has_data_source(tag):
         return tag.has_attr('data-source')
     for item in infobox.find_all(has_data_source):
-        print(999, item.get('data-source'), item.get_text())
         if item.get('data-source') is None:
             continue
         if item.find('div') is not None:
@@ -49,20 +44,29 @@ for link in links:
 
     # Get recipes
     obtaining = soup_page.find(id="Obtaining")
+    if obtaining is None:
+        continue
     crafting = obtaining.find_next(id="Crafting")
     if crafting is None:
         continue
     craftingtable = crafting.find_next("table")
-    recipes = table_to_2d(craftingtable)
+    try:
+        recipes = table_to_2d(craftingtable)
+    except:
+        print(f"Item {single_item['displayName']} is overgeslagen")
+        continue
     columns = len(recipes[0])
     
     for recipe in recipes[1:]:
-        #print(recipe)
         current_column = 1
         inputs = []
         outputs = []
         recipe_object = {}
         recipe_object['recipename'] = recipe[0].replace('Alternate', '')
+        already_found = next((x for x in recipe_list if x.get('recipename') == recipe_object['recipename']), None)
+        if already_found:
+            print('already found', already_found)
+            continue
         recipe_object['alternate'] = True if recipe[0].endswith('Alternate') else False
         previous_column = ''
         for recipecolumn in recipe[1:]:
@@ -81,18 +85,26 @@ for link in links:
                 pass
             elif column_name == "Ingredients":
                 recipeinput = recipecolumn.split(' × ')
-                first_digit = re.search(r"\d", recipeinput[1]).start()
-                recipe_min = float(recipeinput[1][first_digit:].split(' / min')[0])
-                productname = recipeinput[1].replace(f"{str(recipe_min).replace('.0', '')} / min", '')
-                inputs.append({"product": productname, "amount": int(recipeinput[0]), "recipe_min": recipe_min})
+                try:
+                    first_digit = re.search(r"\d", recipeinput[1]).start()
+                    recipe_min = float(recipeinput[1][first_digit:].split(' / min')[0])
+                    productname = recipeinput[1].replace(f"{str(recipe_min).replace('.0', '')} / min", '')
+                except:
+                    recipe_min = None
+                    productname = recipeinput[1]
+                inputs.append({"product": productname, "amount": float(recipeinput[0]), "recipe_min": recipe_min})
             elif column_name == "Products":
                 recipeinput = recipecolumn.split(' × ')
-                recipe_mj = float(re.search(r'/ min(.*) MJ', recipeinput[1]).group(1))
-                first_digit = re.search(r"\d", recipeinput[1]).start()
-                recipe_min = float(recipeinput[1][first_digit:].split(' / min')[0])
-                print(999, recipeinput[1], f"{recipe_min} / min{recipe_mj} MJ/item")
-                productname = recipeinput[1].replace(f"{str(recipe_min).replace('.0', '')} / min{str(recipe_mj).replace('.0', '')} MJ/item", '')
-                outputs.append({"product": productname, "amount": int(recipeinput[0]), "recipe_min": recipe_min, "mj": recipe_mj})
+                try:
+                    recipe_mj = float(re.search(r'/ min(.*) MJ', recipeinput[1]).group(1))
+                    first_digit = re.search(r"\d", recipeinput[1]).start()
+                    recipe_min = float(recipeinput[1][first_digit:].split(' / min')[0])
+                    productname = recipeinput[1].replace(f"{str(recipe_min).replace('.0', '')} / min{str(recipe_mj).replace('.0', '')} MJ/item", '')
+                except:
+                    recipe_min = None
+                    recipe_mj = None
+                    productname = recipeinput[1]
+                outputs.append({"product": productname, "amount": float(recipeinput[0]), "recipe_min": recipe_min, "mj": recipe_mj})
             previous_column = recipecolumn
         recipe_object['inputs'] = inputs
         recipe_object['outputs'] = outputs
